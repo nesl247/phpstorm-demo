@@ -13,23 +13,19 @@ use Zend\Diactoros\Response\JsonResponse;
 class DisplayMessageByToken implements MiddlewareInterface
 {
     /**
-     * This has a typo in it, we should probably rebase against the conflict branch to fix it!
-     *
      * @var HelloWorldService
      */
-    private $helloWorldServiceWithATypo;
+    private $helloWorldService;
 
     public function __construct(HelloWorldService $helloWorldService)
     {
-        $this->helloWorldServiceWithATypo = $helloWorldService;
+        $this->helloWorldService = $helloWorldService;
     }
 
     public function process(ServerRequestInterface $request, DelegateInterface $delegate): ResponseInterface
     {
         $token = HelloWorldService::MESSAGE_EXAMPLE;
 
-        // This will eventually need a token, but we don't have it now..
-        // Let's retype this by hand so we can see PhpStorm's autocomplete at work!
-        return new JsonResponse(['message' => $this->helloWorldServiceWithATypo->getAMessageByToken(),]);
+        return new JsonResponse(['message' => $this->helloWorldService->getAMessageByToken($token),]);
     }
 }

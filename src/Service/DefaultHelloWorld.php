@@ -5,10 +5,11 @@ namespace nesl247\Demo\Service;
 
 class DefaultHelloWorld implements HelloWorldAdapter
 {
+    const HELLO_WORLD = 'Hello World!';
+
     public function getMessage(): string
     {
-        // This could be a constant
-        return 'Hello World!';
+        return self::HELLO_WORLD;
     }
 
     public function method1(): string
@@ -18,6 +19,6 @@ class DefaultHelloWorld implements HelloWorldAdapter
 
     public function method2(): string
     {
-        return 'This is method 2' // Notice we are missing the semicolon
+        return 'This is method 2';
     }
 }

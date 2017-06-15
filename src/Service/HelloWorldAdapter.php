@@ -8,4 +8,6 @@ interface HelloWorldAdapter
     public function getMessage(): string;
 
     public function method1(): string;
+
+    public function method2(): string;
 }
