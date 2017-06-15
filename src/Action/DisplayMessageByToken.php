@@ -13,8 +13,6 @@ use Zend\Diactoros\Response\JsonResponse;
 class DisplayMessageByToken implements MiddlewareInterface
 {
     /**
-     * This has a typo in it, we should probably rebase against the conflict branch to fix it!
-     *
      * @var HelloWorldService
      */
     private $helloWorldServiceWithATypo;
